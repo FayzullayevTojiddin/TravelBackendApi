@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: TravelBackendApi
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    buildCommand: ""
+    startCommand: php artisan serve --host=0.0.0.0 --port=8000
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: dpg-cvtb5ck9c44c738jh85g-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: travelbackend_2ddc
+      - key: DB_USERNAME
+        value: travel
+      - key: DB_PASSWORD
+        value: sT5vciUlZKCjyt4OjJYHpeSrH2yMyFFM
