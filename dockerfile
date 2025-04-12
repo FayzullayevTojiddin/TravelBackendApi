@@ -19,6 +19,8 @@ RUN composer install --optimize-autoloader --no-dev
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 775 /var/www/storage
 
-EXPOSE 8000
+# Portni dinamik sozlash
+EXPOSE ${PORT:-8000}
 
-CMD php artisan serve --host=0.0.0.0 --port=8000
+# Laravelni ishga tushurish
+CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
